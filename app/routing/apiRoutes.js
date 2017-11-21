@@ -18,17 +18,12 @@ module.exports = function (app) {
 
         var userData = req.body;
         var userScores = userData.scores;
-        console.log(userData);
-        console.log(userScores);
 
         var totalDifference;
 
         for (var i in friendsData) {
             var currentFriend = friendsData[i];
             totalDifference = 0;
-
-            console.log(currentFriend.name);
-            console.log(currentFriend.scores.length);
 
             for (var j in currentFriend.scores) {
                 var currentFriendScore = currentFriend.scores[j];
