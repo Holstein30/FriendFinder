@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h1 class="panel-title">
+                        <strong>Survey Questions</strong>
+                    </h1>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Name</label>
+                        <input type="name" class="form-control" id="userName" placeholder="required" required>
+                        <hr class="my-4">
+                        <label for="exampleFormControlInput1">Picture</label>
+                        <input type="photo" class="form-control" id="userPicture" placeholder="required" required>
+                    </div>
+                    <hr class="my-4">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Question 1</label>
+                        <select class="form-control" placeholder="Choose a Value" id="question1">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect2">Question 2</label>
+                        <select class="form-control" id="question2">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect2">Question 3</label>
+                        <select class="form-control" id="question3">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect2">Question 4</label>
+                        <select class="form-control" id="question4">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect2">Question 5</label>
+                        <select class="form-control" id="question5">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect2">Question 6</label>
+                        <select class="form-control" id="question6">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect2">Question 7</label>
+                        <select class="form-control" id="question7">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect2">Question 8</label>
+                        <select class="form-control" id="question8">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect2">Question 9</label>
+                        <select class="form-control" id="question9">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect2">Question 10</label>
+                        <select class="form-control" id="question10">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+
+                    <div class="text-left">
+                        <button type="submit" class="btn btn-primary btn-md" id="submit">
+                            <span class="glyphicon glyphicon-fire">Submit</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Match -->
+        <div id="results-modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Match content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 class="modal-title">
+                            <strong>Best Match</strong>
+                        </h2>
+                    </div>
+                    <div class="modal-body">
+                        <h2 id="match-name"></h2>
+                        <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            $("#submit").on("click", function (e) {
+                e.preventDefault();
+                var newUser = {
+                    name: $("#userName").val().trim(),
+                    photo: $("#userPicture").val(),
+                    scores: [
+                        $("#question1").val(),
+                        $("#question2").val(),
+                        $("#question3").val(),
+                        $("#question4").val(),
+                        $("#question5").val(),
+                        $("#question6").val(),
+                        $("#question7").val(),
+                        $("#question8").val(),
+                        $("#question9").val(),
+                        $("#question10").val()
+                    ]
+                };
+                // console.log(newUser.scores);
+                $.post("/api/friends", newUser).done(
+                    function (data) {
+                        console.log(data);
+                        if (data) {
+                            alert("Submitted");
+                        }
+                        $("#match-name").text(data.name);
+                        $("#match-img").attr("src", data.photo);
+
+                        // Show best match
+                        $("#results-modal").modal("toggle");
+
+                        // $("#userName").val("");
+                        // $("#userPicture").val("");
+                        // $("#question1").val("");
+                        // $("#question2").val("");
+                        // $("#question3").val("");
+                        // $("#question4").val("");
+                        // $("#question5").val("");
+                        // $("#question6").val("");
+                        // $("#question7").val("");
+                        // $("#question8").val("");
+                        // $("#question9").val("");
+                        // $("#question10").val("");
+
+                    });
+            });
+        </script>
+</body>
+
+</html>
