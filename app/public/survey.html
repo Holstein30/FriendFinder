@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Survey</title>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
@@ -11,15 +11,58 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
     <style>
+        *,
+        *:after,
+        *:before {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            transition: all 1s ease;
+        }
+
+        body {
+            background-image: url(http://corecanvas.s3.amazonaws.com/theonering-0188db0e/gallery/original/war_in_middle_earth_map.jpg);
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .panel-title {
+            font-size: 40px;
+        }
+
+        .container {
+            padding: 20px;
+            width: 80%;
+            height: 100%;
+        }
+
         .form-group {
-            padding: 35px;
+            padding: 15px;
             font-size: 25px;
         }
 
         .form-control {
             width: 20%;
             text-align: center;
-            margin: 15px auto;
+            margin: auto;
+        }
+
+        .panel-heading h3:after {
+            content: " OFF"
         }
 
         #submit {
@@ -31,17 +74,73 @@
         #userPicture {
             width: 500px;
         }
+        /*Light Switch*/
+
+        .lightswitch {
+            display: block;
+            height: 5%;
+            width: 10%;
+            background: #f5f5f5;
+            text-align: center;
+            font: 14px/25px Helvetica, Arial, sans-serif;
+            margin: 20px 0 20px 10px;
+            position: fixed;
+            border: 2px solid #222;
+        }
+
+        .lightswitch:hover {
+            background: #222;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input#lightswitch {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        /*Switched Off*/
+
+        input#lightswitch:checked+.panel {
+            background-color: #222;
+        }
+
+        input#lightswitch:checked+.panel h1 {
+            color: #fff;
+        }
+
+        input#lightswitch:checked+.panel .panel-heading {
+            background-color: #222;
+            color: #fff;
+        }
+
+        input#lightswitch:checked+.panel .panel-heading h3:after {
+            content: " ON";
+        }
+
+        input#lightswitch:checked+.panel label {
+            color: #fff;
+        }
+
+        input#lightswitch:checked+.panel p {
+            color: #fff;
+        }
     </style>
 </head>
 
 <body>
     <div class="container text-center">
         <div class="row">
+            <label class="lightswitch" for="lightswitch">TOGGLE THEME</label>
+            <input type="checkbox" id="lightswitch" />
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h1 class="panel-title">
                         <strong>Survey Questions</strong>
                     </h1>
+                    <h3>
+                        <strong>Dark Theme: </strong>
+                    </h3>
                 </div>
                 <form>
                     <div class="form-group">
@@ -54,102 +153,122 @@
                     <hr class="my-4">
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Question 1</label>
+                        <p>I would sail to the Grey Havens and leave Middle Earth to its doom if given the choice</p>
                         <select class="form-control" placeholder="Choose a Value" id="question1">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option>Choose an Option</option>
+                            <option value="1">1(Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5(Strongly Agree)</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect2">Question 2</label>
+                        <p>Morning isn't complete until you have at least had second breakfast</p>
                         <select class="form-control" id="question2">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option>Choose an Option</option>
+                            <option value="1">1(Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5(Strongly Agree)</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect2">Question 3</label>
+                        <p>If given the ring of power I would try to destroy it</p>
                         <select class="form-control" id="question3">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option>Choose an Option</option>
+                            <option value="1">1(Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5(Strongly Agree)</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect2">Question 4</label>
+                        <p>My weapon of choice would be</p>
                         <select class="form-control" id="question4">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option>Choose an Option</option>
+                            <option value="1">1(a Bow & Arrow)</option>
+                            <option value="2">2(a Sword)</option>
+                            <option value="3">3(an Axe)</option>
+                            <option value="4">4(a Mace)</option>
+                            <option value="5">5(Magic)</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect2">Question 5</label>
+                        <p>If given the choice I would live in</p>
                         <select class="form-control" id="question5">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option>Choose an Option</option>
+                            <option value="1">1(Rivendell)</option>
+                            <option value="2">2(Minas Tirith)</option>
+                            <option value="3">3(Moria)</option>
+                            <option value="4">4(Isengard)</option>
+                            <option value="5">5(Mordor)</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect2">Question 6</label>
+                        <p>I have a tendancy to call things "My Precious"</p>
                         <select class="form-control" id="question6">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option>Choose an Option</option>
+                            <option value="1">1(Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5(Strongly Agree)</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect2">Question 7</label>
+                        <p>You prefer your men/women to have a beard</p>
                         <select class="form-control" id="question7">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option>Choose an Option</option>
+                            <option value="1">1(Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5(Strongly Agree)</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect2">Question 8</label>
+                        <p>You ride into battle on horseback</p>
                         <select class="form-control" id="question8">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option>Choose an Option</option>
+                            <option value="1">1(Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5(Strongly Agree)</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect2">Question 9</label>
+                        <p>You have often been called a "Fool of a Took"</p>
                         <select class="form-control" id="question9">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option>Choose an Option</option>
+                            <option value="1">1(Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5(Strongly Agree)</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect2">Question 10</label>
+                        <p>I most closley identify as </p>
                         <select class="form-control" id="question10">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option>Choose an Option</option>
+                            <option value="1">1(a Dwarf)</option>
+                            <option value="2">2(a Hobbit)</option>
+                            <option value="3">3(a Human)</option>
+                            <option value="4">4(an Elf)</option>
+                            <option value="5">5(a Wizard)</option>
                         </select>
                     </div>
 
@@ -176,7 +295,8 @@
                     </div>
                     <div class="modal-body">
                         <h2 id="match-name"></h2>
-                        <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+                        <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" style="height: 400px; width: 400px;"
+                            alt="">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -220,16 +340,16 @@
 
                         $("#userName").val("");
                         $("#userPicture").val("");
-                        $("#question1").val("");
-                        $("#question2").val("");
-                        $("#question3").val("");
-                        $("#question4").val("");
-                        $("#question5").val("");
-                        $("#question6").val("");
-                        $("#question7").val("");
-                        $("#question8").val("");
-                        $("#question9").val("");
-                        $("#question10").val("");
+                        $("#question1").val("Choose an Option");
+                        $("#question2").val("Choose an Option");
+                        $("#question3").val("Choose an Option");
+                        $("#question4").val("Choose an Option");
+                        $("#question5").val("Choose an Option");
+                        $("#question6").val("Choose an Option");
+                        $("#question7").val("Choose an Option");
+                        $("#question8").val("Choose an Option");
+                        $("#question9").val("Choose an Option");
+                        $("#question10").val("Choose an Option");
 
                     });
             });
